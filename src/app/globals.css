@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Zenviah.ai Design Tokens */
+    /* Background: #F8F9FC -> 225 33% 98% */
+    --background: 225 33% 98%;
+    /* Primary Text: #171923 -> 230 21% 11% */
+    --foreground: 230 21% 11%;
+
+    /* Card: #FFFFFF */
+    --card: 0 0% 100%;
+    --card-foreground: 230 21% 11%;
+
+    /* Popover: #FFFFFF */
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 21% 11%;
+
+    /* Primary: #635BFF -> 243 100% 68% */
+    --primary: 243 100% 68%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: #8B7CFF -> 247 100% 74% */
+    --secondary: 225 25% 95%;
+    --secondary-foreground: 230 21% 11%;
+
+    /* Muted / Secondary Text: #777E90 -> 223 11% 52% */
+    --muted: 225 25% 95%;
+    --muted-foreground: 223 11% 52%;
+
+    /* Accent */
+    --accent: 243 100% 97%;
+    --accent-foreground: 243 100% 60%;
+
+    /* Destructive / Danger: #E5484D -> 358 75% 59% */
+    --destructive: 358 75% 59%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border: #E8EAF0 -> 225 22% 93% */
+    --border: 225 22% 93%;
+    --input: 225 22% 91%;
+    --ring: 243 100% 68%;
+
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    --background: 223 17% 8%;
+    --foreground: 225 33% 98%;
+    --card: 223 17% 10%;
+    --card-foreground: 225 33% 98%;
+    --popover: 223 17% 10%;
+    --popover-foreground: 225 33% 98%;
+    --primary: 243 100% 68%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 223 15% 15%;
+    --secondary-foreground: 225 33% 98%;
+    --muted: 223 15% 15%;
+    --muted-foreground: 223 11% 62%;
+    --accent: 243 40% 18%;
+    --accent-foreground: 243 100% 80%;
+    --destructive: 358 75% 59%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 223 15% 18%;
+    --input: 223 15% 18%;
+    --ring: 243 100% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-[#635BFF]/15 selection:text-[#635BFF];
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Custom sleek scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(119, 126, 144, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(119, 126, 144, 0.45);
+}
+
+/* React Flow custom styling overrides for Zenviah.ai */
+.react-flow__node {
+  border-radius: 12px;
+}
+.react-flow__handle {
+  width: 10px !important;
+  height: 10px !important;
+  border: 2px solid #ffffff !important;
+  background-color: #635BFF !important;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+.react-flow__handle:hover {
+  transform: scale(1.25);
+  background-color: #8B7CFF !important;
+}
+.react-flow__ attribution {
+  display: none;
+}
+
